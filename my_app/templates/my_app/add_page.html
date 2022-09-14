@@ -1,0 +1,12 @@
+{% extends "my_app/base.html" %}
+
+{% block content %}
+<h1>Create new post</h1>
+
+<form action="{% url 'addpage' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+
+<button type="submit">Добавить</button>
+</form>
+{% endblock %}

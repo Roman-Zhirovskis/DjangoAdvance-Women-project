@@ -1,0 +1,34 @@
+{% extends "my_app/base.html" %}
+
+{% block content %}
+    <meta charset="UTF-8">
+    Ny web-site - bitch
+<!--<body>-->
+
+<title> {{ title }} </title>
+
+{% for women in womens %}
+<li><div class="article-panel">
+         <p class="first">Категория: {{women.cat}}</p>
+         <p class="last">Дата: {{women.time_update|date:"d-m-Y H:i:s"}}</p>
+</div>
+<h2>{{women.title}}</h2>
+    {% if women.photo %}
+    <p><img class="img-article-left thumbs" width="100" height="150" src="{{women.photo.url}}"></p>
+
+    {% endif %}
+    <br>
+<br>
+biography: {{women.content}}
+<li><a href="{{ women.get_absolute_url }}">Читать пост</a></li>
+<br>
+<br>
+<br>
+create time: {{women.time_create}}
+<h3>Women.html work</h3>
+<br>
+<br>
+<br>
+{% endfor %}
+{% endblock %}
+<!--</body>-->

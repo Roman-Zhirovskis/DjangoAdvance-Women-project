@@ -1,0 +1,24 @@
+{% extends "my_app/base.html" %}
+
+{% block content %}
+<title> {{ title }} </title>
+    <meta charset="UTF-8">
+    Значения в БД
+
+
+<h2>{{post.title}}</h2>
+
+post was created: {{post.time_create}}
+{% if post.photo %}
+<p><img class="img-article-left thumbs" width="150" height="170" src="{{post.photo.url}}"></p>
+{% endif %}
+<br>
+<br>
+<br>
+    {{ post.content }}
+
+
+
+
+
+{% endblock %}
